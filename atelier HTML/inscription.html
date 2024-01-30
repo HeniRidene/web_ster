@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title> inscription</title>
+</head>
+<body>
+    <header>  
+        <nav>    
+            <a href="index.html" >home</a>
+            <a href="about.html" >projets et taches</a>
+            <a href="contact.html" >liste employes</a>
+            <a href="yesyes.html" >inscription</a>
+        </nav>
+        <hr>
+    </header>
+    <section >
+        <img  src="img1.jpg" alt="banner" height="130%" width="70%">
+        <form>
+            <table>
+                <tr>
+                    <td> <label>Nom</label> </td>
+                    <td> <input type="text" name="nom" placeholder="nom" required pattern="[A-Za-z]{2,}" title="Veuillez entrer un nom valide (lettres uniquement)">  </td> 
+                </tr>
+                <tr>
+                    <td> <label>Prenom</label> </td>
+                    <td> <input type="text" name="prenom" placeholder="prenom" required pattern="[A-Za-z]{2,}" title="Veuillez entrer un prénom valide (lettres uniquement)"> <br></td>
+                </tr>
+                
+                <tr>
+                    <td> <label>Email</label> </td>
+                    <td> <input type="email" name="email" placeholder="email" required> <br> </td>
+                </tr>
+                
+                <tr>
+                    <td> <label>telephone</label> </td>
+                    <td> <input type="text" name="telephone" placeholder="telephone"  required pattern="[0-9]{8}" title="Veuillez entrer un numéro de téléphone valide (8 chiffres)"> <br> </td>
+                </tr>
+                
+                <tr>
+                    <td> <label>date naissance</label> </td>
+                    <td> <input type="date" name="date_naissance" placeholder="date" required> <br> </td>
+                </tr>
+                
+                <tr>
+                    <td> <label>mot de passe</label> </td>
+                    <td> <input type="password" name="mot_de_passe" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Le mot de passe doit contenir au moins 8 caractères, incluant au moins un chiffre, une lettre minuscule et une lettre majuscule" > <br> </td>
+                </tr>      
+            </table>
+            <button type="submit" name="submit">envoyer</button>
+        </form>
+    </section>
+    <footer>
+        <hr>
+        <p> vous pouvez me contacter pour vous  carry <a href="mailto:heni.ridene@esprit.tn">  via mail</a> </p>
+        <p> adresse : kelibia, nabeul</p>
+
+    </footer>
+
+</body>
+</html>
