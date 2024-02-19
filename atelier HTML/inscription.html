@@ -1,69 +1,116 @@
 <!DOCTYPE html>
 <html>
-<head> 
-    <title> inscription</title>
-    
-</head>
-<body>
-    
-    <header>  
-        <nav>    
-            <a href="index.html" >home</a>
-            <a href="about.html" >projets et taches</a>
-            <a href="contact.html" >liste employes</a>
-            <a href="yesyes.html" >inscription</a>
-        </nav>
-        <hr>
+  <head>
+    <title>Accueil</title>
+  </head>
+  <body>
+
+    <header>
+      <br />
+      <nav>
+        <div>
+          <a href="accueil.html">Home</a>
+          <a href="projets_taches.html">Projets et tâches</a>
+          <a href="liste_employes.html">Liste employés</a>
+          <a href="inscription.html">Inscription</a>
+        </div>
+      </nav>
+      <br />
+      <hr />
+      <br />
+      <img
+        src="assets/img1.jpg"
+        width="100%"
+        height="500"
+        alt="Image d'accueil"
+      />
     </header>
-    <section >
-        <img  src="img1.jpg" alt="banner" height="130%" width="70%">
-        <form id="form">
-            <table>
-                <tr>
-                    <td> <label for="nom">Nom</label> </td>
-                    <td> <input type="text" name="nom"  id="nom" >  </td> 
-                    <td> <span style="color: red " id="nameError"></span> </td>
-                </tr>
-                <tr>
-                    <td> <label>Prenom</label> </td>
-                    <td> <input type="text" name="prenom" placeholder="prenom" id="prenom" > <br></td>
-                    <td> <span style="color: red " id="prenomError"></span> </td>
-                </tr>
+
+    <section>
+      <h1>Inscription au Site</h1>
+      <form action="" id="form">
+        <table>
+          <tr>
+            <td><label for="nom">Nom :</label></td>
+            <td>
+              <input
+                type="text"
+                id="nom"
+                name="nom"
                 
-                <tr>
-                    <td> <label>Email</label> </td>
-                    <td> <input type="email" name="email" placeholder="email" id="email"> <br> </td>
-                    <td> <span style="color: red " id="emailError"></span> </td>
-                </tr>
+              />
+            </td>
+           <td> <span id="erreurNom" style='color:red' ></span></td>
+          </tr>
+          <tr>
+            <td><label for="prenom">Prénom :</label></td>
+            <td>
+              <input
+                type="text"
+                id="prenom"
+                name="prenom"
+               
+              />
+            </td>
+            <td> <p id="errorPrenom" style='color:red' ></p></td>
+          </tr>
+          <tr>
+            <td><label for="email">Email :</label></td>
+            <td><input type="email" id="email" name="email"  /></td>
+             <td> <span id="erreurEmail" style='color:red' ></span></td>
+          </tr>
+          <tr>
+            <td><label for="telephone">Téléphone :</label></td>
+            <td>
+              <input
+                type="text"
+                id="telephone"
+                name="telephone"
+               
+              />
+            </td>
+            <td> <span id="erreurTelephone" style='color:red' ></span></td>
+          </tr>
+          <tr>
+            <td><label for="date_naissance">Date de naissance :</label></td>
+            <td>
+              <input
+                type="date"
+                id="date_naissance"
+                name="date_naissance"
                 
-                <tr>
-                    <td> <label>telephone</label> </td>
-                    <td> <input type="text" name="telephone" placeholder="telephone" id="telephone" > <br> </td>
-                    <td> <span style="color: red " id="telephoneError"></span> </td>
-                </tr>
-                
-                <tr>
-                    <td> <label>date naissance</label> </td>
-                    <td> <input type="date" name="date_naissance" id="date_naissance"  > <br> </td>
-                    <td> <span style="color: red " id="date_naissanceError"></span> </td>
-                </tr>
-                
-                <tr>
-                    <td> <label>mot de passe</label> </td>
-                    <td> <input type="password" name="mot_de_passe"  id="mot_de_passe" > <br> </td>
-                    <td> <span style="color: red " id="mot_de_passeError"></span> </td>
-                </tr>      
-            </table>
-            <input type="submit" value="S'inscrire"></input>
-        </form>
+
+              />
+            </td>
+            <td> <span id="errorDate_naissance" style='color:red' ></span></td>
+          </tr>
+          <tr>
+            <td><label for="password">Mot de passe:</label></td>
+            <td>
+              <input
+              type="password"
+              id="password"
+              name="password"
+               />
+            </td>
+            <td> <span id="errorDate_password" style='color:red' ></span></td>
+          </tr>
+        </table>
+        <input type="submit" value="S'inscrire" />
+      </form>
     </section>
-    <script src="inscription.js"></script>
+
+
+    <br />
+    <hr />
     <footer>
-        <hr>
-        <p> vous pouvez me contacter pour vous  carry <a href="mailto:heni.ridene@esprit.tn">  via mail</a> </p>
-        <p> adresse : kelibia, nabeul</p>
-
+      <p>
+        Vous pouvez nous contacter par email :
+        <a href="mailto:heni.ridene@esprit.tn">add me</a>
+      </p>
+      <p>Adresse : ariana, tunis</p>
     </footer>
-
-</body>
+    <script src="inscription.js"></script>
+    
+  </body>
 </html>

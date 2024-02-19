@@ -1,76 +1,114 @@
-const form = document.getElementById("form");
-const nomInput = document.getElementById("nom");
-const prenomInput = document.getElementById("prenom");
-const emailInput = document.getElementById("email");
-const telephoneInput = document.getElementById("telephone");
-const datenaissanceInput = document.getElementById("date_naissance");
-const motDePasseInput = document.getElementById("mot_de_passe"); 
-
-
-form.addEventListener("submit", function(event) {
-    event.preventDefault(); 
-
-    const nom = nomInput.value.trim();
-    if (nom === "" || nom.length < 0) {
-        document.getElementById("nameError").textContent = "vous devez ecrire votre nom.";
-        return;
+function validerDateOfBirth() {
+    var dateNaissanceInput = document.getElementById("date_naissance");
+    var dateNaissanceValeur = new Date(dateNaissanceInput.value);
+    var aujourdhui = new Date();
+  
+    if (dateNaissanceValeur >= aujourdhui) {
+      alert("La date de naissance doit être antérieure à la date d'aujourd'hui.");
     } else {
-        document.getElementById("nameError").textContent = ""; 
+      alert("La date de naissance est valide.");
     }
+}
 
+  
 
-    const prenom = prenomInput.value.trim();
-    if (prenom === "" || prenom.length < 0) {
-        document.getElementById("prenomError").textContent = "vous devez ecrire votre prenom.";
-        return;
+  const form = document.getElementById("form");
+  
+  const nomInput = document.getElementById("nom");
+  const prenomInput = document.getElementById("prenom");
+  const telephoneInput = document.getElementById("telephone");
+  const dateOfBirthInput = document.getElementById("date_naissance");
+  const password = document.getElementById("password");
+  
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    validerNom();
+    validerPrenom();
+    validerTelephone();
+    validerDateOfBirth();
+    validerPassword()
+  });
+  
+  function validerNom() {
+    const nomValeur = nomInput.value;
+    const nomRegex = /^[A-Za-z]+$/;
+    const erreurNom = document.getElementById("erreurNom");
+  
+    if (!nomValeur.match(nomRegex)) {
+      erreurNom.innerHTML = "Veuillez entrer un nom valide (lettres uniquement)";
     } else {
-        document.getElementById("prenomError").textContent = ""; 
+      erreurNom.innerHTML = "<span style='color:green'> Correct </span>";
     }
-
-
-    const email = emailInput.value.trim();
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (!emailRegex.test(email)) {
-        alert("Veuillez entrer une adresse e-mail valide.");
-        return;
+  }
+  
+  function validerPrenom() {
+    const prenomValeur = prenomInput.value;
+    const prenomRegex = /^[A-Za-z]+$/;
+    const erreurPrenom = document.getElementById("errorPrenom");
+  
+    if (!prenomValeur.match(prenomRegex)) {
+      erreurPrenom.innerHTML =
+        "Veuillez entrer un prénom valide (lettres uniquement)";
+    } else {
+      erreurPrenom.innerHTML = "<span style='color:green'> Correct </span>";
     }
-    else {
-        document.getElementById("date_naissanceError").textContent = ""; 
+  }
+  
+  function validerTelephone() {
+    const telephoneValeur = telephoneInput.value;
+    const telephoneRegex = /^[0-9]{8}$/;
+    const erreurTelephone = document.getElementById("erreurTelephone");
+  
+    if (!telephoneValeur.match(telephoneRegex)) {
+      erreurTelephone.innerHTML =
+        "Veuillez entrer un numéro de téléphone valide (8 chiffres)";
+    } else {
+      erreurTelephone.innerHTML = "<span style='color:green'> Correct </span>";
     }
+  }
+  
+  function validerDateOfBirth() {
     
-
-    const telephone = telephoneInput.value.trim();
-    const telephoneRegex = /^[0-9]{10}$/;
-    if (!telephoneRegex.test(telephone)) {
-        alert("Veuillez entrer un numero de telephone valide.");
-        return;
-    }
-    else {
-        document.getElementById("telephoneError").textContent = ""; 
-    }
-
-
-    const date_naissance = datenaissanceInput.value;
-    const dateNaissanceRegex = /^\d{4}-\d{2}-\d{2}$/;
-    if (!dateNaissanceRegex.test(date_naissance)) {
-        alert("Veuillez entrer une date de naissance valide.");
-        return; 
-    }
-    else {
-        document.getElementById("date_naissanceError").textContent = ""; 
-    }
+    var dateNaissanceValeur = new Date(dateOfBirthInput.value);
+    console.log(dateNaissanceValeur);
+    var aujourdhui = new Date();
+    const erreurDOB = document.getElementById("errorDate_naissance");
+  
+    if (dateNaissanceValeur >= aujourdhui || dateNaissanceValeur =="Invalid Date") {
+      erreurDOB.innerHTML = "La date de naissance doit être antérieure à la date d'aujourd'hui."
     
-
-    const mot_de_passe = motDePasseInput.value;
-    const motDePasseRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if (!motDePasseRegex.test(mot_de_passe)) {
-        alert("Le mot de passe doit contenir au moins 8 caracteres, dont une lettre minuscule, une lettre majuscule, un chiffre et un caractere special.");
-        return;    
+    } else {
+      erreurDOB.innerHTML = "<span style='color:green'> Correct </span>";
     }
-    else {
-        document.getElementById("mot_de_passeError").textContent = ""; 
+}
+function validerPassword() {
+  const passwordValeur = password.value;
+    const passwordRegex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/ ;
+    const erreurPassword = document.getElementById("errorDate_password");
+  
+    if (!passwordValeur.match(passwordRegex)) {
+      erreurPassword.innerHTML =
+        "Veuillez entrer un mot de passe valide (Le mot de passe doit contenir au moins 8 caractères, incluant au moins un chiffre, une lettre minuscule et une lettre majuscule)";
+    } else {
+      erreurPassword.innerHTML = "<span style='color:green'> Correct </span>";
     }
-
-    alert("Formulaire soumis avec succes !");
-    
-});
+}
+  
+  const emailInput = document.getElementById("email");
+  const erreurEmail = document.getElementById("erreurEmail");
+  
+  emailInput.addEventListener("keyup", function () {
+    validerEmail();
+  });
+  
+  function validerEmail() {
+    const emailValeur = emailInput.value.trim();
+    const emailRegex = /^\S+@esprit.tn+$/;
+  
+    if (!emailValeur.match(emailRegex)) {
+      erreurEmail.innerHTML = "Veuillez entrer une adresse email valide";
+    } else {
+      erreurEmail.innerHTML = "<span style='color:green'> Correct </span>";
+    }
+  }
+  
