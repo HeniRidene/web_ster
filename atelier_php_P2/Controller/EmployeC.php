@@ -11,14 +11,19 @@ class EmployeC
             <tr>
             <td>Lastname</td>
             <td>Firstname</td>
+            <td>password</td>
+            <td>Date of Birth</td>
+            <td>Phone number</td>
             <td>Email</td>
-            <td>Phone</td>
             </tr>
             <tr>
             <td>' . $employe->getLastName() . '</td>
             <td>' . $employe->getFirstName() . '</td>
             <td>' . $employe->getEmail() . '</td>
             <td>' . $employe->getPhone() . '</td>
+            <td>' . $employe->getDOB() . '</td>
+            <td>' . $employe->getPassword() . '</td>
+
             </tr>
             </table>
             ';
